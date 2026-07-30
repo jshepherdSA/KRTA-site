@@ -1,7 +1,10 @@
 # Design system — KRTA
 
-Source of truth: **`../KRTA Design System/`** (the modernist KRTA system supplied with this
-project). This file restates it in build terms. Where the two disagree, the supplied system wins.
+Source of truth: the **KRTA Design System** package supplied with this project — the modernist KRTA
+system (`tokens/`, `css/`, `components/`, `guidelines/`, `ui_kits/`, `assets/krta-logo.png`). It is
+**not committed to this repo**; it lives alongside the checkout, one level up, as
+`KRTA Design System/`. This file restates it in build terms so the repo is buildable without it.
+Where the two disagree, the supplied system wins — go back to the package.
 
 Its tokens and component class layer are ported verbatim into `app/globals.css`; do not invent
 values here. Tailwind utilities are available, but every color / size / spacing utility resolves to
@@ -85,7 +88,7 @@ The label register — eyebrows, kickers, tags, button labels, table headers, fi
 
 ## Components
 
-Ported from `KRTA Design System/css/components.css`. Class names are the contract.
+Ported from the package's `css/components.css`. Class names are the contract.
 
 - **Button** `.btn` + `.btn-primary` (red fill, white type) / `.btn-secondary` (blue outline) /
   `.btn-ghost` (red text). Sizes `.btn-sm` `.btn-lg` `.btn-block`. Uppercase 13px label, flush left,

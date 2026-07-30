@@ -3,8 +3,9 @@
 
 /* ---------------------------------------------------------------------------
    KRTA design system
-   Ported verbatim from `../KRTA Design System/` (tokens/ + css/).
-   That directory is the source of truth; values here must not drift from it.
+   Ported verbatim from the supplied KRTA Design System package (tokens/ + css/).
+   That package is the source of truth and is not committed here; values below
+   must not drift from it. See design-system.md.
    --------------------------------------------------------------------------- */
 
 /* --- tokens/colors.css --------------------------------------------------- */

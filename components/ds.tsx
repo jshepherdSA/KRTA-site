@@ -1,6 +1,6 @@
 /**
  * The KRTA design system component set, ported from
- * `../KRTA Design System/components/`. These render the class layer in
+ * the supplied KRTA Design System package. These render the class layer in
  * globals.css and take no styling decisions of their own.
  */
 import Link from "next/link";

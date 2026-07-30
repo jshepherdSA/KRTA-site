@@ -3,6 +3,11 @@
 A rebuild of [krta.org](https://krta.org/) on Next.js (App Router, TypeScript) with Tailwind and
 shadcn/ui, styled entirely by the supplied **KRTA Design System**.
 
+> The design system package itself is **not in this repo** — it is a client brand asset held
+> separately. Everything needed to build and run the site is here: its tokens and component class
+> layer are ported into `app/globals.css`, and [`design-system.md`](design-system.md) restates the
+> rules. Go back to the package when you need the originals (logo source, guideline cards, UI kit).
+
 ## Getting started
 
 ```bash
@@ -17,7 +22,7 @@ npm run format  # prettier
 
 | File | What it is |
 | --- | --- |
-| [`design-system.md`](design-system.md) | The supplied `KRTA Design System/` restated in build terms. Its tokens and component class layer are ported verbatim into `app/globals.css`. **The supplied system is the authority** — do not drift from it. |
+| [`design-system.md`](design-system.md) | The supplied KRTA Design System restated in build terms. Its tokens and component class layer are ported verbatim into `app/globals.css`. **The supplied package is the authority** — do not drift from it. |
 | [`teardown.md`](teardown.md) | The krta.org teardown: page inventory, navigation labels, URL map, brand cues, and what the rebuild does instead of each pattern on the live site. |
 
 ## How the styling is wired
@@ -34,7 +39,7 @@ npm run format  # prettier
 
 Archivo is self-hosted through `next/font/google` and exposed as `--font-archivo`.
 
-Components in `components/ds.tsx` are ports of `KRTA Design System/components/`. They render DS
+Components in `components/ds.tsx` are ports of the design system's own component set. They render DS
 classes and take no styling decisions of their own.
 
 ## URLs
