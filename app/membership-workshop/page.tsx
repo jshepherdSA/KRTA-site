@@ -66,7 +66,7 @@ export default function MembershipWorkshopPage() {
     <>
       <PageHeader kicker="For officers" title="Membership Workshop" />
 
-      <Section>
+      <Section tone="muted">
         <div className="prose prose-col">
           <p>
             The following documents are ideas and starting points to help with

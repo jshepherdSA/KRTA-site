@@ -26,7 +26,7 @@ export default function JoinPage() {
         lede="Membership period: July 1 to June 30. Membership dues: $25 annually."
       />
 
-      <Section labelledBy="three-ways">
+      <Section tone="muted" labelledBy="three-ways">
         <SectionHeading
           title="KRTA has three ways you can join"
           id="three-ways"

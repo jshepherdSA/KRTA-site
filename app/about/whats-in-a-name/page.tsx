@@ -44,7 +44,7 @@ export default function WhatsInANamePage() {
           </p>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="TRS of KY (Frankfort)" id="trs" />
           <div className="prose prose-col">
             <p>

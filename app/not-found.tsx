@@ -11,7 +11,7 @@ export default function NotFound() {
         lede="The page may have moved, or the link may be out of date."
       />
 
-      <Section>
+      <Section tone="muted">
         <div className="prose prose-col">
           <p>Try one of these instead:</p>
           <ul>

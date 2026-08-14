@@ -318,11 +318,9 @@ export function ClosingPoster({
   action?: string;
   actionHref?: string;
 }) {
-  return (
-    <div style={{ marginTop: "var(--space-16)" }}>
-      <Poster title={title} action={action} actionHref={actionHref} />
-    </div>
-  );
+  // No gap above it: the poster butts against the last band, so the red is
+  // itself the boundary rather than sitting in a strip of leftover white.
+  return <Poster title={title} action={action} actionHref={actionHref} />;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -365,11 +363,13 @@ export function PageHeader({
   lede?: ReactNode;
 }) {
   return (
-    <header className="page-head container">
-      {kicker ? <div className="eyebrow">{kicker}</div> : null}
-      <h1>{title}</h1>
-      {lede ? <p className="page-lede">{lede}</p> : null}
-    </header>
+    <section className="band band-head">
+      <header className="page-head container">
+        {kicker ? <div className="eyebrow">{kicker}</div> : null}
+        <h1>{title}</h1>
+        {lede ? <p className="page-lede">{lede}</p> : null}
+      </header>
+    </section>
   );
 }
 
@@ -411,25 +411,52 @@ export function DocRow({
 /* Section — vertical rhythm wrapper                                          */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * Section — one full-bleed band. `tone` alternates the ground so consecutive
+ * sections never share a background; pages set it in sequence. Together with the
+ * band's 2px top rule and 64px of padding, that is three separation cues per
+ * boundary, which is what this audience needs.
+ */
 export function Section({
   children,
   className,
   id,
   labelledBy,
+  tone = "page",
 }: {
   children: ReactNode;
   className?: string;
   id?: string;
   labelledBy?: string;
+  tone?: "page" | "muted";
 }) {
   return (
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cx("container", className)}
-      style={{ paddingTop: "var(--space-12)" }}
+      className={cx("band", tone === "muted" && "band-muted", className)}
     >
-      {children}
+      <div className="container">{children}</div>
     </section>
+  );
+}
+
+/**
+ * Panel — the in-column equivalent of a band, for the About cluster where
+ * content sits beside the section nav and cannot go full-bleed.
+ */
+export function Panel({
+  children,
+  tone = "page",
+  className,
+}: {
+  children: ReactNode;
+  tone?: "page" | "muted";
+  className?: string;
+}) {
+  return (
+    <div className={cx("panel", tone === "muted" && "panel-muted", className)}>
+      {children}
+    </div>
   );
 }

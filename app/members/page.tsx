@@ -15,7 +15,7 @@ export default function MembersPage() {
     <>
       <PageHeader kicker="Members" title="Member Benefits Login" />
 
-      <Section>
+      <Section tone="muted">
         <div className="prose prose-col">
           <p>
             Online accounts are not automatically created unless you have

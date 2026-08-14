@@ -83,19 +83,26 @@
 }
 
 /* --- tokens/typography.css ----------------------------------------------- */
+/* DEVIATION FROM THE SUPPLIED DESIGN SYSTEM — deliberate, see design-system.md.
+   The package sets body at 15px, already one step up from a typical marketing
+   site. KRTA's readers are retired educators and legislators, many with reduced
+   vision, so the whole ramp is shifted up one notch: body 15 -> 17, secondary
+   13 -> 15, labels 12 -> 13. Headings rise less because they were already large.
+   Token names and their relationships are unchanged, so nothing else had to
+   move. Restore the values in this block to return to the package exactly. */
 :root {
-  --text-xs: 12px;
-  --text-sm: 13px;
-  --text-base: 15px;
-  --text-md: 17px;
-  --text-lg: 20px;
-  --text-xl: 25px;
-  --text-2xl: 32px;
-  --text-3xl: 42px;
-  --text-display: 56px;
-  --leading-tight: 1.12;
-  --leading-snug: 1.3;
-  --leading-body: 1.6;
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-md: 19px;
+  --text-lg: 22px;
+  --text-xl: 27px;
+  --text-2xl: 34px;
+  --text-3xl: 44px;
+  --text-display: 58px;
+  --leading-tight: 1.14;
+  --leading-snug: 1.35;
+  --leading-body: 1.65;
   --tracking-tight: -0.015em;
   --tracking-label: 0.09em;
 }
@@ -262,8 +269,10 @@ p {
 a {
   color: var(--link);
   text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  /* A 2px underline at a wider offset reads as a link at a glance and survives
+     low-contrast screens; 1px hairline underlines disappear for this audience. */
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 a:hover {
   color: var(--link-hover);
@@ -500,7 +509,7 @@ small {
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-4);
-  padding-bottom: var(--space-3);
+  padding-bottom: var(--space-4);
   border-bottom: var(--rule-weight) solid var(--border-rule);
   margin-bottom: var(--space-5);
 }
@@ -651,7 +660,7 @@ select.input {
 .site-head-inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-5) var(--space-6) 0;
   display: flex;
   align-items: center;
   gap: var(--space-6);
@@ -680,14 +689,16 @@ select.input {
   max-width: 15ch;
 }
 .site-nav {
-  flex: 1 1 auto;
+  flex: 1 0 100%;
   min-width: 0;
-  margin-left: auto;
+  margin-top: var(--space-4);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-3) var(--space-5);
+  /* Left-aligned with an even gap: a wrapped row still reads as one list. */
+  justify-content: flex-start;
+  gap: 0 var(--space-8);
+  border-top: var(--hairline-weight) solid var(--border-hairline);
 }
 .site-nav-item {
   position: relative;
@@ -718,10 +729,13 @@ select.input {
   color: var(--color-accent);
 }
 .site-nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: var(--text-sm);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text-primary);
   text-decoration: none;
@@ -826,7 +840,6 @@ select.input {
 .hero {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  border-bottom: var(--rule-weight) solid var(--border-rule);
 }
 .hero-media {
   position: relative;
@@ -866,7 +879,8 @@ select.input {
   grid-template-columns: auto 1fr auto;
   align-items: start;
   gap: var(--space-5);
-  padding: var(--space-5) 0;
+  padding: var(--space-6) var(--space-4);
+  margin: 0 calc(-1 * var(--space-4));
   border-bottom: var(--hairline-weight) solid var(--border-hairline);
   text-decoration: none;
   color: inherit;
@@ -942,7 +956,8 @@ select.input {
 .poster {
   background: var(--color-accent);
   color: #fff;
-  padding: var(--space-12) var(--space-6);
+  padding: var(--space-16) var(--space-6);
+  border-top: var(--rule-weight) solid var(--border-rule);
 }
 .poster-inner {
   max-width: var(--container);
@@ -956,7 +971,9 @@ select.input {
   margin: 0;
   font-size: var(--text-2xl);
   flex: 1;
-  min-width: 22ch;
+  /* 22ch keeps the line from going stringy beside the button, but must never
+     exceed the viewport — at the larger type it did on a narrow phone. */
+  min-width: min(22ch, 100%);
 }
 .poster .btn-primary {
   background: #fff;
@@ -974,7 +991,6 @@ select.input {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border-top: var(--rule-weight) solid var(--border-rule);
-  border-bottom: var(--rule-weight) solid var(--border-rule);
 }
 .quicklink {
   display: flex;
@@ -1063,11 +1079,31 @@ select.input {
   gap: var(--space-2);
 }
 
-/* page header — the interior-page counterpart to the homepage hero */
-.page-head {
-  border-bottom: var(--rule-weight) solid var(--border-rule);
-  padding: var(--space-10) 0 var(--space-6);
+/* ---------------------------------------------------------------------------
+   Bands — the primary way a section is separated from the one before it.
+   Three cues stack, because one is not enough for a reader with poor sight:
+   a full-bleed 2px ink rule, a change of ground (white <-> the gray surface),
+   and 64px of air. The gray is the design system's own `--surface-card`; no new
+   color is introduced.
+   --------------------------------------------------------------------------- */
+.band {
+  padding: var(--space-16) 0;
+  border-top: var(--rule-weight) solid var(--border-rule);
 }
+.band-muted {
+  background: var(--surface-card);
+}
+/* The page header opens the page, so it carries no rule above it. */
+.band-head {
+  border-top: 0;
+  padding: var(--space-10) 0 var(--space-10);
+}
+/* Inside a band the container is already applied by the component. */
+.band > .container {
+  width: 100%;
+}
+
+/* page header — the interior-page counterpart to the homepage hero */
 .page-head h1 {
   margin: 0;
 }
@@ -1076,9 +1112,33 @@ select.input {
 }
 .page-lede {
   margin: var(--space-4) 0 0;
-  font-size: var(--text-md);
+  font-size: var(--text-lg);
   color: var(--text-muted);
-  max-width: 66ch;
+  max-width: 62ch;
+}
+
+/* Panels — the in-column equivalent of a band, for pages whose content sits in
+   the narrow column beside a section nav and cannot go full-bleed. Same three
+   cues: 2px rule, ground change, air. */
+.panel {
+  /* The ground bleeds 24px past the column so the panel reads as a band, while
+     the negative margin keeps its text aligned with the unpanelled block above. */
+  padding: var(--space-8) var(--space-6);
+  margin: var(--space-10) calc(-1 * var(--space-6)) 0;
+  border-top: var(--rule-weight) solid var(--border-rule);
+}
+.panel:first-child {
+  margin-top: 0;
+}
+.panel-muted {
+  background: var(--surface-card);
+}
+.panel > *:last-child {
+  margin-bottom: 0;
+}
+/* A panel's own heading rule would double the panel rule directly above it. */
+.panel > .section-head:first-child {
+  margin-top: 0;
 }
 
 /* page body prose — the running text of an interior page */
@@ -1134,7 +1194,9 @@ ol.bullets li::marker {
   grid-template-columns: 1fr auto auto;
   align-items: baseline;
   gap: var(--space-4);
-  padding: var(--space-4) 0;
+  padding: var(--space-5) var(--space-4);
+  margin: 0 calc(-1 * var(--space-4));
+  min-height: 56px;
   border-bottom: var(--hairline-weight) solid var(--border-hairline);
   text-decoration: none;
   color: var(--text-primary);
@@ -1195,10 +1257,9 @@ ol.bullets li::marker {
 /* interior page with a section nav — the About cluster */
 .with-sidenav {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 270px 1fr;
   gap: var(--space-12);
   align-items: start;
-  padding-top: var(--space-10);
 }
 .sidenav h2 {
   font-size: var(--text-sm);

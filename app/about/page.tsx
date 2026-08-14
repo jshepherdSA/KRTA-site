@@ -55,7 +55,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="Benefits" id="benefits" />
           <ul className="prose-col bullets">
             {benefits.map((b) => (
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </ul>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel">
           <SectionHeading title="Leadership" id="leadership" />
           <ul className="prose-col bullets">
             {leadership.map((l) => (

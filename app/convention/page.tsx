@@ -520,7 +520,7 @@ export default function ConventionPage() {
           <Group key={g.heading} heading={g.heading} docs={g.docs} />
         ))}
 
-        <div style={{ marginTop: "var(--space-12)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="2025 Convention Information" id="c2025" />
           {y2025.map((g) => (
             <Group key={g.heading} heading={g.heading} docs={g.docs} />
@@ -533,7 +533,7 @@ export default function ConventionPage() {
           </div>
         </div>
 
-        <div style={{ marginTop: "var(--space-12)" }}>
+        <div className="panel">
           <SectionHeading title="2024 Convention Information" id="c2024" />
           <div style={{ marginTop: "var(--space-6)" }}>
             <DocList>
@@ -549,7 +549,7 @@ export default function ConventionPage() {
           </div>
         </div>
 
-        <div style={{ marginTop: "var(--space-12)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="2023 Convention Information" id="c2023" />
           <div style={{ marginTop: "var(--space-6)" }}>
             <DocList>

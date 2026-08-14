@@ -16,34 +16,36 @@ export function WithSectionNav({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <div className="with-sidenav container">
-      <nav className="sidenav" aria-label="About KRTA">
-        <h2>In this section</h2>
-        <div className="sidenav-links">
-          <Link
-            href="/about"
-            aria-current={pathname === "/about" ? "page" : undefined}
-          >
-            About KRTA
-          </Link>
-          {aboutChildren.map((c) =>
-            c.external ? (
-              <a key={c.label} href={c.href} target="_blank" rel="noreferrer">
-                {c.label} <span aria-hidden="true">&nbsp;&rarr;</span>
-              </a>
-            ) : (
-              <Link
-                key={c.label}
-                href={c.href}
-                aria-current={pathname === c.href ? "page" : undefined}
-              >
-                {c.label}
-              </Link>
-            ),
-          )}
-        </div>
-      </nav>
-      <div>{children}</div>
-    </div>
+    <section className="band">
+      <div className="with-sidenav container">
+        <nav className="sidenav" aria-label="About KRTA">
+          <h2>In this section</h2>
+          <div className="sidenav-links">
+            <Link
+              href="/about"
+              aria-current={pathname === "/about" ? "page" : undefined}
+            >
+              About KRTA
+            </Link>
+            {aboutChildren.map((c) =>
+              c.external ? (
+                <a key={c.label} href={c.href} target="_blank" rel="noreferrer">
+                  {c.label} <span aria-hidden="true">&nbsp;&rarr;</span>
+                </a>
+              ) : (
+                <Link
+                  key={c.label}
+                  href={c.href}
+                  aria-current={pathname === c.href ? "page" : undefined}
+                >
+                  {c.label}
+                </Link>
+              ),
+            )}
+          </div>
+        </nav>
+        <div>{children}</div>
+      </div>
+    </section>
   );
 }

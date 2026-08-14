@@ -20,10 +20,10 @@ npm run format  # prettier
 
 ## The two specs
 
-| File | What it is |
-| --- | --- |
+| File                                   | What it is                                                                                                                                                                                                  |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`design-system.md`](design-system.md) | The supplied KRTA Design System restated in build terms. Its tokens and component class layer are ported verbatim into `app/globals.css`. **The supplied package is the authority** — do not drift from it. |
-| [`teardown.md`](teardown.md) | The krta.org teardown: page inventory, navigation labels, URL map, brand cues, and what the rebuild does instead of each pattern on the live site. |
+| [`teardown.md`](teardown.md)           | The krta.org teardown: page inventory, navigation labels, URL map, brand cues, and what the rebuild does instead of each pattern on the live site.                                                          |
 
 ## How the styling is wired
 

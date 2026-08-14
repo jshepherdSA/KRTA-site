@@ -54,7 +54,7 @@ export default function CollettePage() {
         title="Travel with Collette and KRTA"
       />
 
-      <Section>
+      <Section tone="muted">
         <div className="prose prose-col">
           <p>
             KRTA Members are invited to participate in safe, affordable group

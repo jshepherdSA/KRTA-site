@@ -83,8 +83,51 @@ The label register — eyebrows, kickers, tags, button labels, table headers, fi
 - A visible modular grid: equal-width cells divided by **2px ink rules**, rows divided by **1px
   hairlines**. Sections are separated by rules, not by whitespace alone.
 - **Every radius is 0.** `--radius-sm/md/lg` all resolve to `0px`.
-- Section rhythm: `--space-12` (48px) between major blocks, `--space-16` (64px) before the footer
-  or a poster band.
+- Section rhythm: `--space-16` (64px) of padding inside every band.
+
+## Bands — how sections are separated
+
+**This is the one structural addition to the package, and it exists for the audience.** KRTA's
+readers are retired educators and legislators; many have reduced vision and little patience for
+hunting a page for where one thing ends and the next begins. A single 2px rule was not doing enough
+work on a long page.
+
+Every section is a **band** — a full-bleed block that stacks three separation cues at each boundary:
+
+1. a full-bleed **2px ink rule** across the top (`--border-rule`),
+2. a **change of ground**, alternating white (`--surface-page`) and the gray
+   (`--surface-card`, `#f5f5f4`) — consecutive bands never share a background,
+3. **64px of padding** inside the band.
+
+No new color is introduced: the gray is the package's own `--surface-card`, which it already
+designates as a legitimate flat fill. `Section` takes `tone="page" | "muted"`; pages set it in
+sequence, and a crawl asserts no two adjacent bands are both muted.
+
+**Panels** (`.panel`, `.panel-muted`) are the in-column equivalent, for the About cluster where
+content sits beside the section nav and cannot go full-bleed. Same three cues; the ground bleeds
+24px past the column so it still reads as a band, with a negative margin keeping the text aligned.
+
+The page header is the first band and carries no rule above it. The red poster carries a 2px rule
+and butts straight against the last band — the red is itself the boundary.
+
+## Other deviations for legibility
+
+Both are deliberate, both are reversible from a single place, and both are flagged in the code.
+
+- **Type ramp shifted one step** (in the `tokens/typography.css` block of `app/globals.css`): body
+  15 → 17, secondary 13 → 15, labels 12 → 13, headings up more gently. Token names and their
+  relationships are unchanged, so no component had to move. Restore the values in that block to
+  return to the package exactly.
+- **Link underlines at 2px** with a 4px offset, rather than the 1px hairline — a hairline underline
+  disappears on a low-contrast screen.
+- **Nav on its own full-width row** beneath the wordmark, left-aligned with 48px rows. At the larger
+  type it no longer fits beside the logo, and a ragged right-aligned wrap was hard to scan.
+- Rows (`.list-row`, `.doc-row`) are taller and horizontally padded so the whole row is the target,
+  not just the text.
+
+**Known contrast limit:** white on the poster red is 4.06:1 — it passes AA for large text, which is
+the only thing set on it (the `h2` at 34px). Do not put body copy in a poster band. Every other
+foreground/background pair in the system passes AA at normal size, on white and on the gray alike.
 
 ## Components
 

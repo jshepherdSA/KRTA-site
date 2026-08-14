@@ -73,7 +73,7 @@ export default function OfficersPage() {
           ))}
         </dl>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="Council and committees" id="council" />
           <DocList>
             <DocRow label="Executive Council" href={docs.executiveCouncil} />

@@ -23,7 +23,7 @@ export default function NewslettersPage() {
     <>
       <PageHeader kicker="Publications" title="KRTA Newsletter" />
 
-      <Section>
+      <Section tone="muted">
         <div className="prose prose-col">
           <p>
             The printed newspaper, KRTA NEWS, provides members with valuable

@@ -28,7 +28,7 @@ export default function SiteMapPage() {
     <>
       <PageHeader kicker="Index" title="Site Map" />
 
-      <Section labelledBy="main-pages">
+      <Section tone="muted" labelledBy="main-pages">
         <SectionHeading title="Main pages" id="main-pages" />
         <ul className="bullets">
           {nav.map((item) => (
@@ -67,7 +67,7 @@ export default function SiteMapPage() {
         </ul>
       </Section>
 
-      <Section labelledBy="news-events">
+      <Section tone="muted" labelledBy="news-events">
         <SectionHeading title="News and events" id="news-events" />
         <ul className="bullets">
           {newsPostBodies.map((p) => (

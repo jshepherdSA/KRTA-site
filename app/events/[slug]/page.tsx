@@ -34,7 +34,7 @@ export default async function EventPostPage({ params }: Props) {
     <>
       <PageHeader kicker={post.date} title={post.title} />
 
-      <Section>
+      <Section tone="muted">
         <article className="prose prose-col">{post.body}</article>
 
         <nav

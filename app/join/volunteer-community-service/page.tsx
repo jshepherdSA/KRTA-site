@@ -67,7 +67,7 @@ export default function CommunityServicePage() {
           </ul>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading
             title="Sixteen $1,650 Scholarships"
             id="scholarships"
@@ -92,7 +92,7 @@ export default function CommunityServicePage() {
           </div>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel">
           <SectionHeading
             title="“Kentucky Grandparent of the Year” Essay Contest for Fifth Graders"
             id="grandparent-essay"
@@ -111,7 +111,7 @@ export default function CommunityServicePage() {
           </div>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="KET Support" id="ket" />
           <div className="prose prose-col">
             <p>

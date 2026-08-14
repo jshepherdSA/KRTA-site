@@ -197,8 +197,12 @@ export default function LinksPage() {
         lede="Handbooks and forms for officers, plus the legislative, retirement, Medicare and insurance references members ask for most."
       />
 
-      {groups.map((g) => (
-        <Section key={g.id} labelledBy={g.id}>
+      {groups.map((g, index) => (
+        <Section
+          key={g.id}
+          labelledBy={g.id}
+          tone={index % 2 === 0 ? "muted" : "page"}
+        >
           <SectionHeading title={g.title} id={g.id} />
           <DocList>
             {g.items.map((i) => (

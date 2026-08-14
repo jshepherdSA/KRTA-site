@@ -58,7 +58,7 @@ export default function InformationServicesPage() {
           ))}
         </ul>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="Other services" id="services" />
           <ul className="prose-col bullets">
             {services.map((s) => (

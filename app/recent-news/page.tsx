@@ -13,7 +13,7 @@ export default function RecentNewsPage() {
     <>
       <PageHeader kicker="Updates" title="Recent News" />
 
-      <Section>
+      <Section tone="muted">
         <div className="list-rows">
           {newsPostBodies.map((n) => (
             <ListRow

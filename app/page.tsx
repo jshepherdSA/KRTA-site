@@ -7,7 +7,7 @@ import {
   Hero,
   ListRow,
   PhotoTile,
-  Poster,
+  ClosingPoster,
   QuickLinks,
   Section,
   SectionHeading,
@@ -163,7 +163,7 @@ export default function Home() {
         />
       </div>
 
-      <Section labelledBy="announcements">
+      <Section tone="muted" labelledBy="announcements">
         <SectionHeading title="Announcements" id="announcements" />
         <div className="three-col">
           {announcements.map((a) => (
@@ -237,7 +237,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section labelledBy="photo-gallery">
+      <Section tone="muted" labelledBy="photo-gallery">
         <SectionHeading title="Photo Gallery" id="photo-gallery" />
         <div className="photo-grid">
           {gallery.map((g) => (
@@ -254,13 +254,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <div style={{ marginTop: "var(--space-16)" }}>
-        <Poster
-          title="Serving Kentucky's retired educators since 1957."
-          action="Join / Renew"
-          actionHref="/join/join-krta"
-        />
-      </div>
+      <ClosingPoster />
     </>
   );
 }

@@ -83,7 +83,7 @@ export default function MissionAndHistoryPage() {
           </p>
         </div>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="History" id="history" />
           <DocList>
             {history.map((h) => (

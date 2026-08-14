@@ -25,7 +25,7 @@ export default function FallWorkshopsPage() {
           </p>
         </div>
 
-        <div style={{ marginTop: "var(--space-8)" }}>
+        <div className="panel panel-muted">
           <DocList>
             <DocRow
               label="2026 Fall Workshop Schedule"

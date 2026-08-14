@@ -63,7 +63,7 @@ export default function LegislativePage() {
         lede="KRTA works to protect the earned retirement security of Kentucky's retired educators. These are the priorities and the tools to act on them."
       />
 
-      <Section>
+      <Section tone="muted">
         <DocList>
           {links.map((l) => (
             <DocRow key={l.href} label={l.label} href={l.href} kind={l.kind} />

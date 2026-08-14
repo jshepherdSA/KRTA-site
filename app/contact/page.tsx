@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { ClosingPoster, PageHeader, SectionHeading } from "@/components/ds";
+import {
+  ClosingPoster,
+  PageHeader,
+  Section,
+  SectionHeading,
+} from "@/components/ds";
 import { addressLines, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -18,7 +23,7 @@ export default function ContactPage() {
         lede="Send the office a message with the form below, or call during office hours."
       />
 
-      <div className="container" style={{ paddingTop: "var(--space-10)" }}>
+      <Section tone="muted">
         <div className="form-col">
           <div>
             {/* The live site embeds this JotForm; it stays the office's real inbox. */}
@@ -75,7 +80,7 @@ export default function ContactPage() {
             </dl>
           </aside>
         </div>
-      </div>
+      </Section>
 
       <ClosingPoster />
     </>

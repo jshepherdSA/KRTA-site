@@ -77,7 +77,7 @@ export default function StaffPage() {
           </div>
         </dl>
 
-        <div style={{ marginTop: "var(--space-10)" }}>
+        <div className="panel panel-muted">
           <SectionHeading title="Staff" id="staff" />
           <dl className="def-list">
             {staff.map((s) => (

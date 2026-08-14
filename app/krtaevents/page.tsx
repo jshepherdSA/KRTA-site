@@ -14,7 +14,7 @@ export default function EventsIndexPage() {
     <>
       <PageHeader kicker="Calendar" title="Upcoming Events" />
 
-      <Section>
+      <Section tone="muted">
         <div className="list-rows">
           {eventPostBodies.map((e) => (
             <ListRow

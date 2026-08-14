@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Button, Card, ClosingPoster, PageHeader } from "@/components/ds";
+import {
+  Button,
+  Card,
+  ClosingPoster,
+  PageHeader,
+  Section,
+} from "@/components/ds";
 import { addressLines, docs, site } from "@/lib/site";
 import { DuesForm } from "./dues-form";
 
@@ -19,7 +25,7 @@ export default function AutomaticDuesDeductionPage() {
         lede="TRS of KY will withhold the annual dues of $25 from your November annuity payment each year. You must have an account with TRS of KY for this option."
       />
 
-      <div className="container" style={{ paddingTop: "var(--space-10)" }}>
+      <Section tone="muted">
         <div className="form-col">
           <DuesForm />
 
@@ -73,7 +79,7 @@ export default function AutomaticDuesDeductionPage() {
             </Card>
           </aside>
         </div>
-      </div>
+      </Section>
 
       <ClosingPoster />
     </>
