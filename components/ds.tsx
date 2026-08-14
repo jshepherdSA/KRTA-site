@@ -262,6 +262,38 @@ export function PhotoTile({
 }
 
 /* -------------------------------------------------------------------------- */
+/* PhotoPlaceholder — where KRTA's own photography belongs                    */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * A reserved photo slot, drawn with the design system's own hatch (`.ph`, from
+ * the package's UI kit) so it is unmistakably a placeholder and never reads as
+ * finished work. The caption carries the brief, so the slot doubles as the shot
+ * list for whoever takes the photograph.
+ *
+ * Replace with `next/image` inside a `.grayscale` wrapper — real KRTA member,
+ * convention and community-service photographs only.
+ */
+export function PhotoPlaceholder({
+  label,
+  brief,
+  ratio = "3 / 2",
+}: {
+  label: string;
+  brief: string;
+  ratio?: string;
+}) {
+  return (
+    <figure className="ph-figure">
+      <div className="ph" style={{ aspectRatio: ratio }} aria-hidden="true">
+        <span>{label}</span>
+      </div>
+      <figcaption>Photo needed — {brief}</figcaption>
+    </figure>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
 /* QuickLinks                                                                 */
 /* -------------------------------------------------------------------------- */
 

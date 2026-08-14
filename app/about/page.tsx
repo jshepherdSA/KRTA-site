@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { ClosingPoster, PageHeader, SectionHeading } from "@/components/ds";
+import {
+  ClosingPoster,
+  PageHeader,
+  SectionHeading,
+  PhotoPlaceholder,
+} from "@/components/ds";
 import { WithSectionNav } from "@/components/section-nav";
 
 export const metadata: Metadata = {
@@ -53,6 +58,14 @@ export default function AboutPage() {
             forth by the leadership, more than 32,000 members enjoy numerous
             benefits, both individually and as a group.
           </p>
+        </div>
+
+        <div className="panel">
+          <PhotoPlaceholder
+            label="Members"
+            brief="KRTA members together at the annual convention — the association's own photograph, wide crop."
+            ratio="16 / 9"
+          />
         </div>
 
         <div className="panel panel-muted">

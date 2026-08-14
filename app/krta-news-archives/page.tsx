@@ -4,6 +4,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
+  PhotoPlaceholder,
   PageHeader,
   Section,
   SectionHeading,
@@ -24,7 +25,16 @@ export default function NewslettersPage() {
       <PageHeader kicker="Publications" title="KRTA Newsletter" />
 
       <Section tone="muted">
-        <div className="prose prose-col">
+        <PhotoPlaceholder
+          label="KRTA News"
+          brief="The printed KRTA NEWS as it arrives — the paper itself, so members recognise it in the post."
+          ratio="3 / 2"
+        />
+
+        <div
+          className="prose prose-col"
+          style={{ marginTop: "var(--space-8)" }}
+        >
           <p>
             The printed newspaper, KRTA NEWS, provides members with valuable
             information in all areas of concern to retirees. Members can read

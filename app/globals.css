@@ -1117,6 +1117,48 @@ select.input {
   max-width: 62ch;
 }
 
+/* Photo placeholders — the hatch is lifted verbatim from the design system's
+   UI kit, so a reserved slot always reads as a reservation and never as art. */
+.ph-figure {
+  margin: 0;
+  /* A reserved slot should read as a slot, not swallow the band. At the full
+     1160px container a 16:9 photo runs 650px tall and outweighs the page. */
+  max-width: 640px;
+}
+.ph-row .ph-figure {
+  max-width: none;
+}
+.ph {
+  width: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-neutral-200),
+    var(--color-neutral-200) 12px,
+    var(--color-neutral-300) 12px,
+    var(--color-neutral-300) 24px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+}
+.ph span {
+  background: var(--color-bg);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+}
+/* A row of reserved slots, on the gallery's 4px gutters. */
+.ph-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-1);
+}
+
 /* Panels — the in-column equivalent of a band, for pages whose content sits in
    the narrow column beside a section nav and cannot go full-bleed. Same three
    cues: 2px rule, ground change, air. */
@@ -1532,7 +1574,8 @@ ol.bullets li::marker {
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .field-grid {
+  .field-grid,
+  .ph-row {
     grid-template-columns: 1fr;
   }
   .list-row {

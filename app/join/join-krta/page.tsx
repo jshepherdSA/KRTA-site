@@ -4,6 +4,7 @@ import {
   Button,
   Card,
   ClosingPoster,
+  PhotoPlaceholder,
   PageHeader,
   Section,
   SectionHeading,
@@ -27,6 +28,14 @@ export default function JoinPage() {
       />
 
       <Section tone="muted" labelledBy="three-ways">
+        <PhotoPlaceholder
+          label="Membership"
+          brief="Members at a local unit meeting — what joining actually looks like."
+          ratio="16 / 9"
+        />
+
+        <div style={{ marginTop: "var(--space-8)" }} />
+
         <SectionHeading
           title="KRTA has three ways you can join"
           id="three-ways"

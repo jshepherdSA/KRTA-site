@@ -3,6 +3,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
+  PhotoPlaceholder,
   PageHeader,
   SectionHeading,
   VideoEmbed,
@@ -515,6 +516,12 @@ export default function ConventionPage() {
       />
 
       <WithSectionNav>
+        <PhotoPlaceholder
+          label="Convention"
+          brief="The convention hall during a general session — wide enough to show the scale of the gathering."
+          ratio="16 / 9"
+        />
+
         <SectionHeading title="2026 Convention Information" id="c2026" />
         {y2026.map((g) => (
           <Group key={g.heading} heading={g.heading} docs={g.docs} />

@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { ClosingPoster, PageHeader, SectionHeading } from "@/components/ds";
+import {
+  ClosingPoster,
+  PageHeader,
+  SectionHeading,
+  PhotoPlaceholder,
+} from "@/components/ds";
 import { WithSectionNav } from "@/components/section-nav";
 
 export const metadata: Metadata = {
@@ -65,6 +70,26 @@ export default function CommunityServicePage() {
               <li key={a}>{a}</li>
             ))}
           </ul>
+        </div>
+
+        <div className="panel">
+          <div className="ph-row">
+            <PhotoPlaceholder
+              label="Volunteering"
+              brief="A member tutoring or reading to children."
+              ratio="4 / 3"
+            />
+            <PhotoPlaceholder
+              label="Scholarship"
+              brief="An N.O. Kimbler scholarship presentation."
+              ratio="4 / 3"
+            />
+            <PhotoPlaceholder
+              label="Essay winner"
+              brief="A Grandparent of the Year winner with their grandparent."
+              ratio="4 / 3"
+            />
+          </div>
         </div>
 
         <div className="panel panel-muted">

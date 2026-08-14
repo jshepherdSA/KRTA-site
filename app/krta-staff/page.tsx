@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { ClosingPoster, PageHeader, SectionHeading } from "@/components/ds";
+import {
+  ClosingPoster,
+  PageHeader,
+  SectionHeading,
+  PhotoPlaceholder,
+} from "@/components/ds";
 import { WithSectionNav } from "@/components/section-nav";
 import { addressLines, site } from "@/lib/site";
 
@@ -76,6 +81,14 @@ export default function StaffPage() {
             </dd>
           </div>
         </dl>
+
+        <div className="panel">
+          <PhotoPlaceholder
+            label="The office"
+            brief="The four staff outside the KRTA office at 7800 Leaders Lane — the people who answer the phone."
+            ratio="3 / 2"
+          />
+        </div>
 
         <div className="panel panel-muted">
           <SectionHeading title="Staff" id="staff" />

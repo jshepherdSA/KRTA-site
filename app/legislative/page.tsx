@@ -3,6 +3,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
+  PhotoPlaceholder,
   PageHeader,
   Section,
 } from "@/components/ds";
@@ -64,11 +65,24 @@ export default function LegislativePage() {
       />
 
       <Section tone="muted">
-        <DocList>
-          {links.map((l) => (
-            <DocRow key={l.href} label={l.label} href={l.href} kind={l.kind} />
-          ))}
-        </DocList>
+        <PhotoPlaceholder
+          label="Frankfort"
+          brief="KRTA members at the Capitol on an advocacy day — the grassroots campaign, in person."
+          ratio="16 / 9"
+        />
+
+        <div style={{ marginTop: "var(--space-8)" }}>
+          <DocList>
+            {links.map((l) => (
+              <DocRow
+                key={l.href}
+                label={l.label}
+                href={l.href}
+                kind={l.kind}
+              />
+            ))}
+          </DocList>
+        </div>
       </Section>
 
       <ClosingPoster

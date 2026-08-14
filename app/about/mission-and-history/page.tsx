@@ -3,6 +3,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
+  PhotoPlaceholder,
   PageHeader,
   SectionHeading,
 } from "@/components/ds";
@@ -81,6 +82,14 @@ export default function MissionAndHistoryPage() {
             that direction through frequent meetings and close communication
             with the Association office staff.
           </p>
+        </div>
+
+        <div className="panel">
+          <PhotoPlaceholder
+            label="Archive"
+            brief="An archival photograph from KRTA's early years — a founding meeting, an early convention, or the first Executive Council."
+            ratio="3 / 2"
+          />
         </div>
 
         <div className="panel panel-muted">

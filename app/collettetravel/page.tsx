@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   ClosingPoster,
+  PhotoPlaceholder,
   PageHeader,
   Section,
   SectionHeading,
@@ -55,7 +56,16 @@ export default function CollettePage() {
       />
 
       <Section tone="muted">
-        <div className="prose prose-col">
+        <PhotoPlaceholder
+          label="Travelling together"
+          brief="A KRTA group on a Collette tour — members on the trip, not stock travel photography."
+          ratio="16 / 9"
+        />
+
+        <div
+          className="prose prose-col"
+          style={{ marginTop: "var(--space-8)" }}
+        >
           <p>
             KRTA Members are invited to participate in safe, affordable group
             travel. Guests are welcome but must travel with a KRTA member. Click

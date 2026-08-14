@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { ClosingPoster, DocList, DocRow, PageHeader } from "@/components/ds";
+import {
+  ClosingPoster,
+  DocList,
+  DocRow,
+  PageHeader,
+  PhotoPlaceholder,
+} from "@/components/ds";
 import { WithSectionNav } from "@/components/section-nav";
 import { docs } from "@/lib/site";
 
@@ -23,6 +29,14 @@ export default function FallWorkshopsPage() {
             invited to attend their District Workshop, registration is required
             through your District/Local President.
           </p>
+        </div>
+
+        <div className="panel">
+          <PhotoPlaceholder
+            label="District workshop"
+            brief="A district Fall Workshop in session — members seated, a presenter at the front."
+            ratio="3 / 2"
+          />
         </div>
 
         <div className="panel panel-muted">
