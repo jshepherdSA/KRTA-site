@@ -69,6 +69,9 @@ set red body copy in `--text-accent`.
 | `--text-sm`      | 13px | h6, secondary body, nav, button labels            |
 | `--text-xs`      | 12px | eyebrows, tags, meta, table headers, field labels |
 
+**The sizes in this table are the package's.** The build ships them one step larger for legibility —
+see "Other deviations" below. The token names, and everything that references them, are unchanged.
+
 Headings: `line-height 1.12`, `letter-spacing -0.015em`. Body: `line-height 1.6`.
 The label register — eyebrows, kickers, tags, button labels, table headers, field labels — is
 13px/12px **uppercase** at `letter-spacing 0.09em`.
@@ -112,7 +115,7 @@ and butts straight against the last band — the red is itself the boundary.
 
 ## Other deviations for legibility
 
-Both are deliberate, both are reversible from a single place, and both are flagged in the code.
+Each is deliberate, reversible from one place, and flagged in the code where it happens.
 
 - **Type ramp shifted one step** (in the `tokens/typography.css` block of `app/globals.css`): body
   15 → 17, secondary 13 → 15, labels 12 → 13, headings up more gently. Token names and their
