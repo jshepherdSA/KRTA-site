@@ -172,24 +172,33 @@ radius, shadow or palette.
 - **Elevation is effectively unused.** `--shadow-sm/md/lg` exist for the single floating layer
   (nav dropdowns, modals); content never floats.
 
-### Reserved photo slots — the shot list
+### Photo slots
 
-Ten slots are reserved with `PhotoPlaceholder`, drawn in the package's own 45° hatch so a
-reservation can never be mistaken for finished work. Each caption is the brief, so this table is
-also the shot list. Replace each with `next/image` inside a `.grayscale` wrapper.
+Slots are filled with `Photo` and reserved with `PhotoPlaceholder`. **A caption always describes
+what is actually in the frame** — a caption that describes something the photograph does not show is
+worse than no photograph, and this audience is being asked to trust the association.
 
-| Page                                   | Slot                      | What the photograph has to show                                              |
-| -------------------------------------- | ------------------------- | ---------------------------------------------------------------------------- |
-| `/about`                               | Members, 16:9             | Members together at the annual convention — makes "32,000 members" concrete  |
-| `/about/mission-and-history`           | Archive, 3:2              | An early founding meeting, convention or Executive Council                   |
-| `/krta-staff`                          | The office, 3:2           | The four staff outside 7800 Leaders Lane — a face for the phone number       |
-| `/information-services/fall-workshops` | District workshop, 3:2    | A workshop in session, so a first-timer knows what to expect                 |
-| `/join/volunteer-community-service`    | Three tiles, 4:3          | Volunteering; a Kimbler scholarship presentation; a Grandparent essay winner |
-| `/convention`                          | Convention, 16:9          | The hall in general session — the scale of the gathering                     |
-| `/collettetravel`                      | Travelling together, 16:9 | A KRTA group on tour. **Members, not stock travel photography**              |
-| `/legislative`                         | Frankfort, 16:9           | Members at the Capitol on an advocacy day                                    |
-| `/krta-news-archives`                  | KRTA News, 3:2            | The printed paper itself, so members recognise it in the post                |
-| `/join/join-krta`                      | Membership, 16:9          | A local unit meeting — what joining actually looks like                      |
+Filled from KRTA's own library:
+
+| Page                                | What the photograph shows                                                     |
+| ----------------------------------- | ----------------------------------------------------------------------------- |
+| `/about`                            | About twenty members on the steps at the annual convention                    |
+| `/about/mission-and-history`        | The Executive Council — the oldest institutional photograph available         |
+| `/convention`                       | The AARP Grandparent of the Year presentation at the head table               |
+| `/legislative`                      | The United States Capitol. **Stock (Unsplash), inherited from the live site** |
+| `/krta-news-archives`               | The front page of the July 2026 edition, rendered from the PDF                |
+| `/join/join-krta`                   | Second District members with their membership award                           |
+| `/join/volunteer-community-service` | The annual volunteer-hours record; the Volunteer of the Year award            |
+| `/krta-officers`                    | The 2026-2027 officers, at full resolution                                    |
+
+Still reserved — nothing in the library shows these, and no substitute would be honest:
+
+| Page                                   | Slot                | What still has to be photographed        |
+| -------------------------------------- | ------------------- | ---------------------------------------- |
+| `/krta-staff`                          | The office          | The four staff at 7800 Leaders Lane      |
+| `/information-services/fall-workshops` | District workshop   | A workshop in session                    |
+| `/collettetravel`                      | Travelling together | A KRTA group on a Collette tour          |
+| `/join/volunteer-community-service`    | Scholarship         | An N.O. Kimbler scholarship presentation |
 
 Slots cap at 640px wide: a reserved area should read as a slot, not swallow its band.
 
@@ -197,6 +206,12 @@ Pages with **no** slot, deliberately: the FAQ, Constitution and By Laws, Local/D
 Information Services, Membership Workshop, Members, Contact, Site Map, and the news and event posts.
 These are reference pages people arrive at with a task. A photograph there is decoration, and this
 system does not do decoration.
+
+**Two images on the site conflict with the imagery rule and are KRTA's call, not ours.** The
+homepage and Legislative lead image is a stock Unsplash photograph, not KRTA's own. And one of the
+fifteen homepage gallery images (`12-Staff-Photo-Booth`) is a convention photo-booth composite —
+framed, overprinted and carrying a third-party sponsor credit. Both are inherited from the live
+site. The rest of the photo-booth run, 192 images, was left out for the same reason.
 
 ## Motion, hover, focus
 

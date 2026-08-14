@@ -3,7 +3,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
-  PhotoPlaceholder,
+  Photo,
   PageHeader,
   Section,
 } from "@/components/ds";
@@ -65,9 +65,13 @@ export default function LegislativePage() {
       />
 
       <Section tone="muted">
-        <PhotoPlaceholder
-          label="Frankfort"
-          brief="KRTA members at the Capitol on an advocacy day — the grassroots campaign, in person."
+        {/* The site's existing lead image. It is the United States Capitol, not
+            Frankfort, and the caption says so — a photograph of KRTA members at
+            the Kentucky Capitol is still worth commissioning. */}
+        <Photo
+          src="/images/hero/ssa-fairness-act.jpg"
+          alt="The United States Capitol building in Washington"
+          caption="The United States Capitol. KRTA's legislative work runs in Frankfort and in Washington."
           ratio="16 / 9"
         />
 

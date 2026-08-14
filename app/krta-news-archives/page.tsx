@@ -4,7 +4,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
-  PhotoPlaceholder,
+  Photo,
   PageHeader,
   Section,
   SectionHeading,
@@ -25,10 +25,11 @@ export default function NewslettersPage() {
       <PageHeader kicker="Publications" title="KRTA Newsletter" />
 
       <Section tone="muted">
-        <PhotoPlaceholder
-          label="KRTA News"
-          brief="The printed KRTA NEWS as it arrives — the paper itself, so members recognise it in the post."
-          ratio="3 / 2"
+        <Photo
+          src="/images/newsletter-cover.jpg"
+          alt="The front page of the July 2026 edition of KRTA NEWS"
+          caption="The front page of the July 2026 edition."
+          ratio="1 / 1"
         />
 
         <div

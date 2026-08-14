@@ -3,7 +3,7 @@ import {
   ClosingPoster,
   PageHeader,
   SectionHeading,
-  PhotoPlaceholder,
+  Photo,
 } from "@/components/ds";
 import { WithSectionNav } from "@/components/section-nav";
 
@@ -61,10 +61,11 @@ export default function AboutPage() {
         </div>
 
         <div className="panel">
-          <PhotoPlaceholder
-            label="Members"
-            brief="KRTA members together at the annual convention — the association's own photograph, wide crop."
-            ratio="16 / 9"
+          <Photo
+            src="/images/gallery/05-90-and-above-Archer-1.jpg"
+            alt="About twenty KRTA members photographed together on the steps at the annual state convention"
+            caption="Members at the annual state convention."
+            ratio="4 / 3"
           />
         </div>
 

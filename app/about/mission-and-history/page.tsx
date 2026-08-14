@@ -3,7 +3,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
-  PhotoPlaceholder,
+  Photo,
   PageHeader,
   SectionHeading,
 } from "@/components/ds";
@@ -85,10 +85,13 @@ export default function MissionAndHistoryPage() {
         </div>
 
         <div className="panel">
-          <PhotoPlaceholder
-            label="Archive"
-            brief="An archival photograph from KRTA's early years — a founding meeting, an early convention, or the first Executive Council."
-            ratio="3 / 2"
+          {/* The oldest institutional photograph in KRTA's library. A genuinely
+              archival image of the founding years is still worth commissioning. */}
+          <Photo
+            src="/images/hero/serving-communities.jpg"
+            alt="Members of the KRTA Executive Council photographed together"
+            caption="The KRTA Executive Council."
+            ratio="16 / 9"
           />
         </div>
 

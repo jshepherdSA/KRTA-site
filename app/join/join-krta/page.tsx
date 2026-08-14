@@ -4,7 +4,7 @@ import {
   Button,
   Card,
   ClosingPoster,
-  PhotoPlaceholder,
+  Photo,
   PageHeader,
   Section,
   SectionHeading,
@@ -28,10 +28,11 @@ export default function JoinPage() {
       />
 
       <Section tone="muted" labelledBy="three-ways">
-        <PhotoPlaceholder
-          label="Membership"
-          brief="Members at a local unit meeting — what joining actually looks like."
-          ratio="16 / 9"
+        <Photo
+          src="/images/gallery/04-Shaw-Second-District-1.jpg"
+          alt="Second District members standing together with their membership award at the annual convention"
+          caption="Second District members at the annual convention."
+          ratio="4 / 3"
         />
 
         <div style={{ marginTop: "var(--space-8)" }} />

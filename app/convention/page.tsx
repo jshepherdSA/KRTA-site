@@ -3,7 +3,7 @@ import {
   ClosingPoster,
   DocList,
   DocRow,
-  PhotoPlaceholder,
+  Photo,
   PageHeader,
   SectionHeading,
   VideoEmbed,
@@ -516,9 +516,10 @@ export default function ConventionPage() {
       />
 
       <WithSectionNav>
-        <PhotoPlaceholder
-          label="Convention"
-          brief="The convention hall during a general session — wide enough to show the scale of the gathering."
+        <Photo
+          src="/images/gallery/10-IMG_5260-X3-1.jpg"
+          alt="An AARP Grandparent of the Year presentation at the head table during the KRTA annual convention"
+          caption="The AARP Grandparent of the Year presentation at the annual convention."
           ratio="16 / 9"
         />
 

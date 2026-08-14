@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   ClosingPoster,
   PageHeader,
   SectionHeading,
+  Photo,
   PhotoPlaceholder,
 } from "@/components/ds";
 import { WithSectionNav } from "@/components/section-nav";
@@ -75,43 +75,21 @@ export default function CommunityServicePage() {
 
         <div className="panel">
           <div className="ph-row">
-            <figure className="ph-figure">
-              <div
-                className="photo-tile grayscale"
-                style={{ aspectRatio: "4 / 3" }}
-              >
-                <Image
-                  src="/images/community/volunteer-hours.jpg"
-                  alt="Two KRTA members holding an oversized cheque recording members' volunteer contributions to the Commonwealth of Kentucky"
-                  fill
-                  sizes="(max-width: 620px) 100vw, 33vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <figcaption>
-                Members present the association&rsquo;s annual record of
-                volunteer hours and contributions.
-              </figcaption>
-            </figure>
+            <Photo
+              src="/images/community/volunteer-hours.jpg"
+              alt="Two KRTA members holding an oversized cheque recording members' volunteer contributions to the Commonwealth of Kentucky"
+              caption="Members present the association's annual record of volunteer hours and contributions."
+              ratio="4 / 3"
+              sizes="(max-width: 620px) 100vw, 33vw"
+            />
 
-            <figure className="ph-figure">
-              <div
-                className="photo-tile grayscale"
-                style={{ aspectRatio: "4 / 3" }}
-              >
-                <Image
-                  src="/images/community/volunteer-of-the-year.jpg"
-                  alt="The Frank R. Hatfield Volunteer of the Year receiving the award on stage at the annual convention"
-                  fill
-                  sizes="(max-width: 620px) 100vw, 33vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <figcaption>
-                The Frank R. Hatfield Volunteer of the Year, presented at the
-                annual convention.
-              </figcaption>
-            </figure>
+            <Photo
+              src="/images/community/volunteer-of-the-year.jpg"
+              alt="The Frank R. Hatfield Volunteer of the Year receiving the award on stage at the annual convention"
+              caption="The Frank R. Hatfield Volunteer of the Year, presented at the annual convention."
+              ratio="4 / 3"
+              sizes="(max-width: 620px) 100vw, 33vw"
+            />
 
             <PhotoPlaceholder
               label="Scholarship"

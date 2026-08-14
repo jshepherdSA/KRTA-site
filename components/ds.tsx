@@ -3,6 +3,7 @@
  * the supplied KRTA Design System package. These render the class layer in
  * globals.css and take no styling decisions of their own.
  */
+import Image from "next/image";
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
@@ -274,6 +275,40 @@ export function PhotoTile({
  * Replace with `next/image` inside a `.grayscale` wrapper — real KRTA member,
  * convention and community-service photographs only.
  */
+/**
+ * A filled photo slot. Always grayscale, always square-cornered, and always
+ * captioned with what is actually in the frame — a caption that describes
+ * something the photograph does not show is worse than no photograph.
+ */
+export function Photo({
+  src,
+  alt,
+  caption,
+  ratio = "3 / 2",
+  sizes = "(max-width: 900px) 100vw, 640px",
+}: {
+  src: string;
+  alt: string;
+  caption?: ReactNode;
+  ratio?: string;
+  sizes?: string;
+}) {
+  return (
+    <figure className="ph-figure">
+      <div className="photo-tile grayscale" style={{ aspectRatio: ratio }}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={sizes}
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      {caption ? <figcaption>{caption}</figcaption> : null}
+    </figure>
+  );
+}
+
 export function PhotoPlaceholder({
   label,
   brief,
