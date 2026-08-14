@@ -1391,6 +1391,10 @@ ol.bullets li::marker {
 .def-list {
   border-top: var(--rule-weight) solid var(--border-rule);
   margin: 0;
+  /* Measured against the list's own width, not the viewport: the same list sits
+     full-width on the staff page and in a ~350px column beside the contact form,
+     where a 14rem term column would leave the value nowhere to go. */
+  container-type: inline-size;
 }
 .def-row {
   display: grid;
@@ -1409,6 +1413,12 @@ ol.bullets li::marker {
 }
 .def-row dd {
   margin: 0;
+}
+@container (max-width: 460px) {
+  .def-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
 }
 
 /* skip link */

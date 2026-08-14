@@ -69,14 +69,21 @@ export default function ContactPage() {
                   <a href={`mailto:${site.email}`}>{site.email}</a>
                 </dd>
               </div>
-              <div className="def-row">
-                <dt>Office hours</dt>
-                <dd>
-                  Monday- Thursday 8:30-4:00
-                  <br />
-                  Friday 8:30-2:00
-                </dd>
-              </div>
+            </dl>
+
+            <h3
+              className="label-heading"
+              style={{ marginTop: "var(--space-8)" }}
+            >
+              Office hours
+            </h3>
+            <dl className="def-list">
+              {site.hours.map((h) => (
+                <div className="def-row" key={h.days}>
+                  <dt>{h.days}</dt>
+                  <dd>{h.time}</dd>
+                </div>
+              ))}
             </dl>
           </aside>
         </div>

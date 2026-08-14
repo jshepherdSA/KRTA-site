@@ -16,7 +16,12 @@ export const site = {
     state: "KY",
     zip: "40291",
   },
-  hours: ["Monday–Thursday 8:30–4:00", "Friday 8:30–2:00"],
+  // One entry per set of hours, so every surface can lay them out as rows
+  // rather than re-splitting a single string.
+  hours: [
+    { days: "Monday–Thursday", time: "8:30–4:00" },
+    { days: "Friday", time: "8:30–2:00" },
+  ],
   social: {
     facebook: "https://www.facebook.com/KentuckyRetiredTeachersAssociation/",
     twitter: "https://twitter.com/kyretiredteach",

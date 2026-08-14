@@ -30,7 +30,9 @@ export function SiteFooter() {
             }}
           >
             {site.hours.map((h) => (
-              <div key={h}>{h}</div>
+              <div key={h.days}>
+                {h.days} {h.time}
+              </div>
             ))}
           </div>
         </div>
