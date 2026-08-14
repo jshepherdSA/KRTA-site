@@ -253,7 +253,7 @@ export function PhotoTile({
   children: ReactNode;
 }) {
   return (
-    <figure className="photo-tile grayscale">
+    <figure className="photo-tile">
       {children}
       {caption ? (
         <figcaption className="photo-tile-caption">{caption}</figcaption>
@@ -272,13 +272,15 @@ export function PhotoTile({
  * finished work. The caption carries the brief, so the slot doubles as the shot
  * list for whoever takes the photograph.
  *
- * Replace with `next/image` inside a `.grayscale` wrapper — real KRTA member,
+ * Replace with `next/image` via the `Photo` component — real KRTA member,
  * convention and community-service photographs only.
  */
 /**
- * A filled photo slot. Always grayscale, always square-cornered, and always
- * captioned with what is actually in the frame — a caption that describes
- * something the photograph does not show is worse than no photograph.
+ * A filled photo slot: full colour, square-cornered, and always captioned with
+ * what is actually in the frame — a caption that describes something the
+ * photograph does not show is worse than no photograph.
+ *
+ * Only the homepage hero runs through `.grayscale`; see design-system.md.
  */
 export function Photo({
   src,
@@ -295,7 +297,7 @@ export function Photo({
 }) {
   return (
     <figure className="ph-figure">
-      <div className="photo-tile grayscale" style={{ aspectRatio: ratio }}>
+      <div className="photo-tile" style={{ aspectRatio: ratio }}>
         <Image
           src={src}
           alt={alt}

@@ -164,8 +164,13 @@ radius, shadow or palette.
 
 ## Imagery
 
-- Real KRTA member, convention and community-service photographs, always through the `.grayscale`
-  wrapper (`filter: grayscale(1) contrast(1.06)`). Square corners. 4:3 in the gallery grid.
+- Real KRTA member, convention and community-service photographs. Square corners. 4:3 in the
+  gallery grid.
+- **DEVIATION — photography runs in colour.** The package puts every photograph through the
+  `.grayscale` wrapper. On this build the wrapper is applied to **one image only: the homepage
+  hero.** Everything else — the gallery, the officers, the community-service tiles, every filled
+  slot — is full colour. The `.grayscale` class is retained for the hero and for anything KRTA
+  later wants to pull back to monochrome.
 - Never tinted, duotoned or colorized. No stock illustration, no drawn SVG artwork.
 - Flat backgrounds only — white, gray surface, slate footer field, red poster band. No image behind
   text, no pattern, no texture, no blur.

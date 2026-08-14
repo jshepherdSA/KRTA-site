@@ -52,7 +52,6 @@ export default function OfficersPage() {
       <WithSectionNav>
         <figure style={{ marginBottom: "var(--space-8)", maxWidth: 600 }}>
           <Image
-            className="grayscale"
             src="/images/officers-2026-2027.jpg"
             alt="The four KRTA officers for 2026-2027, photographed together"
             width={1600}
