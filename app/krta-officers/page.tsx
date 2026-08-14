@@ -55,8 +55,8 @@ export default function OfficersPage() {
             className="grayscale"
             src="/images/officers-2026-2027.jpg"
             alt="The four KRTA officers for 2026-2027, photographed together"
-            width={300}
-            height={225}
+            width={1600}
+            height={1200}
             style={{ width: "100%", height: "auto" }}
           />
           <figcaption>(Officers are listed left to right)</figcaption>

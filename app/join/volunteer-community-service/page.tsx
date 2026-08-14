@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ClosingPoster,
   PageHeader,
@@ -74,19 +75,47 @@ export default function CommunityServicePage() {
 
         <div className="panel">
           <div className="ph-row">
-            <PhotoPlaceholder
-              label="Volunteering"
-              brief="A member tutoring or reading to children."
-              ratio="4 / 3"
-            />
+            <figure className="ph-figure">
+              <div
+                className="photo-tile grayscale"
+                style={{ aspectRatio: "4 / 3" }}
+              >
+                <Image
+                  src="/images/community/volunteer-hours.jpg"
+                  alt="Two KRTA members holding an oversized cheque recording members' volunteer contributions to the Commonwealth of Kentucky"
+                  fill
+                  sizes="(max-width: 620px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <figcaption>
+                Members present the association&rsquo;s annual record of
+                volunteer hours and contributions.
+              </figcaption>
+            </figure>
+
+            <figure className="ph-figure">
+              <div
+                className="photo-tile grayscale"
+                style={{ aspectRatio: "4 / 3" }}
+              >
+                <Image
+                  src="/images/community/volunteer-of-the-year.jpg"
+                  alt="The Frank R. Hatfield Volunteer of the Year receiving the award on stage at the annual convention"
+                  fill
+                  sizes="(max-width: 620px) 100vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <figcaption>
+                The Frank R. Hatfield Volunteer of the Year, presented at the
+                annual convention.
+              </figcaption>
+            </figure>
+
             <PhotoPlaceholder
               label="Scholarship"
-              brief="An N.O. Kimbler scholarship presentation."
-              ratio="4 / 3"
-            />
-            <PhotoPlaceholder
-              label="Essay winner"
-              brief="A Grandparent of the Year winner with their grandparent."
+              brief="An N.O. Kimbler scholarship presentation. KRTA's library holds no photograph of one."
               ratio="4 / 3"
             />
           </div>
